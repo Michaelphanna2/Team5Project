@@ -1,7 +1,11 @@
 $(function() {
+	$.getJSON("https://newsapi.org/v2/everything?" + "q=Apple&" + "from=2019-06-16&" + "sortBy=popularity&" + "apiKey=0ec608c4c88f4339b03e2366f95f2d66",
+	function(data){
+		console.log(data);
+	});	
 
 	// searching news articles that mention a specific topic or keyword
-	var urlOne = "https://newapi.org/v2/everything?" + 
+	var urlOne = "https://newsapi.org/v2/everything?" + 
 				"q=Apple&" + "from=2019-06-16&" + "sortBy=popularity&" +
 				"apiKey=0ec608c4c88f4339b03e2366f95f2d66";
 	var req = new Request (url);
@@ -41,4 +45,4 @@ $.ajax({
 		}
 
 	)
-}
+});
