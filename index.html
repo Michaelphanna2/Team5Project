@@ -1,124 +1,149 @@
 <!DOCTYPE html>
 
 <html lang="en">
+	<!--This is the title of my project.-->
+	<head>
+		<meta charset="UTF-8" />
+		<title>YOBAL</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
- <!--This is the title of my project.-->
-  <head>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
 
-      <meta charset="UTF-8">
-      <title>YOBAL</title>
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link
+			href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAA/+4ACwgaACsA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERIRERERERERIiERERERERIiIhERERERIiAiIRERERIiACIiERERIiIiIiIhERIgAiAAIiIRIiAAAAIiIhIiAAIiIiACIiACIiIgAAAiIgIgAAAiAiIiAiIiIiIiISIiIiIiIiIREiIiIiIiIREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+			rel="icon"
+			type="image/x-icon"
+		/>
 
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+		<script src="https://kit.fontawesome.com/2b09762066.js"></script>
+		<!-- jquery link -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- css link -->
+		<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+		<div id="openweathermap-widget-19"></div>
+		<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+	</head>
 
-      
+	<body>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4">YOBAL</h1>
+				<p class="lead"></p>
+				<form class="form-inline my-2 my-lg-0">
+					<input
+						class="form-control mr-sm-2"
+						type="search"
+						placeholder="Search"
+						aria-label="Search"
+					/>
+					<button
+						id="search-button-one"
+						class="btn btn-outline-success my-2 my-sm-0"
+						type="submit"
+					>
+						Search
+					</button>
+				</form>
+			</div>
+		</div>
 
-        <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAA/+4ACwgaACsA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERIRERERERERIiERERERERIiIhERERERIiAiIRERERIiACIiERERIiIiIiIhERIgAiAAIiIRIiAAAAIiIhIiAAIiIiACIiACIiIgAAAiIgIgAAAiAiIiAiIiIiIiISIiIiIiIiIREiIiIiIiIREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
-  
-        <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
-        <script src="https://kit.fontawesome.com/2b09762066.js"></script>
-        <!-- jquery link -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- css link -->
-        <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
-        <div id="openweathermap-widget-19"></div>        
-        <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Project Links</a>
 
-  </head>
- 
-  <body>
-      <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">YOBAL</h1>
-            <p class="lead"></p>
-            <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button id="search-button-one" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-          </div>
-        </div>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a id="convert" class="nav-link"
+							>Convert <i class="fas fa-money-bill-alt"></i
+							><span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a id="weather" class="nav-link"
+							>Weather <i class="fas fa-cloud-sun-rain"></i
+							><span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a id="news" class="nav-link"
+							>News <i class="fas fa-cloud-sun-rain"></i
+							><span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a id="sports" class="nav-link"
+							>Sports <i class="fas fa-futbol"></i
+							><span class="sr-only">(current)</span></a
+						>
+					</li>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Project Links</a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="https://media.giphy.com/media/3o6gDWzmAzrpi5DQU8/giphy.gif">Convert <i class="fas fa-money-bill-alt"></i><span class="sr-only">(current)</span></a>
-                </li>
+					<li class="nav-item active">
+						<a id="entertainment" class="nav-link"
+							>Entertainment <i class="fas fa-dice"></i
+							><span class="sr-only">(current)</span></a
+						>
+					</li>
+				</ul>
+			</div>
+		</nav>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="https://media.giphy.com/media/xUPGct4LThsOiwJg3K/giphy.gif">Sports <i class="fas fa-futbol"></i><span class="sr-only">(current)</span></a>
-                    </li>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+				<li class="page-item">
+					<a class="page-link">1</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link">2</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link">3</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link">4</a>
+				</li>
+				<li class="page-item">
+					<a class="page-link">5</a>
+				</li>
+				<li class="page-item"><a class="page-link">Next</a></li>
+			</ul>
+		</nav>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="https://www.google.com/?client=safari&channel=iphone_bm">Search <i class="fab fa-searchengin"></i><span class="sr-only">(current)</span></a>
-                    </li>
+		<div id="results-display"></div>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="https://media.giphy.com/media/RVugDJ0XtZeEg/giphy.gif">Entertainment <i class="fas fa-dice"></i><span class="sr-only">(current)</span></a>
-                    </li>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">4</a></li>
+				<li class="page-item"><a class="page-link" href="#">5</a></li>
+				<li class="page-item"><a class="page-link" href="#">Next</a></li>
+			</ul>
+		</nav>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="WeatherApi.html">Weather <i class="fas fa-cloud-sun-rain"></i><span class="sr-only">(current)</span></a>
-                    </li>                                                  
-            </div>
-
-
-
-          </nav>
-        
-          
-
-          <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="https://media.giphy.com/media/3o6gDWzmAzrpi5DQU8/giphy.gif">1</a></li>
-                <li class="page-item"><a class="page-link" href="https://media.giphy.com/media/xUPGct4LThsOiwJg3K/giphy.gif">2</a></li>
-                <li class="page-item"><a class="page-link" href="https://www.google.com/?client=safari&channel=iphone_bm">3</a></li>
-                <li class="page-item"><a class="page-link" href="https://media.giphy.com/media/RVugDJ0XtZeEg/giphy.gif">4</a></li>
-                <li class="page-item"><a class="page-link" href="WeatherApi.html">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </nav>
-
-      <section id="contactInfo">
-
-          <h2>Contact Information</h2>
-
-      </section>
-
-      <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-
-          </ul>
-        </nav>
-
-  </div>
-  <!-- js link -->
-  <script src="assets/javascript/app.js" type="text/javascript"></script>
-  <script src="assets/javascript/zach.js" type="text/javascript"></script>
-  </body>
-
+		<!-- js link -->
+		<!-- <script src="assets/javascript/app.js" type="text/javascript"></script> -->
+		<script src="assets/javascript/zach.js" type="text/javascript"></script>
+	</body>
 </html>
