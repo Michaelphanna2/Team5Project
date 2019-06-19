@@ -1,8 +1,10 @@
 $(document).ready(function() {
 	// **need to add "clear children feature still"
 	$("#news").on("click", function() {
+		$("#results-display").append();
 		// **go back to the api, try to limit search results ("articles" in results)
-		var url = "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
+		var url = "https://newsapi.org/v2/top-headlines?sources=google-news-uk&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
+		// "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
 		$.ajax({
 			url: url,
 			method: "GET"
@@ -14,7 +16,7 @@ $(document).ready(function() {
 				
 				// create container div
 				var newDiv = $("<div>");
-				newDiv.html(article.url);
+				newDiv.html(article.title);
 				
 				// creating img 
 				var newProperty = $("<img>");
@@ -33,6 +35,7 @@ $(document).ready(function() {
 	});
 	// sports click function
 	$("#sports").on("click", function() {
+		console.log("click");
 		// **go back to the api, try to limit search results ("articles" in results)
 		var url = "https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
 		$.ajax({
@@ -49,7 +52,7 @@ $(document).ready(function() {
 				
 				// create container div
 				var newDiv = $("<div>");
-				newDiv.html(article.url);
+				newDiv.html(article.title);
 				
 				// creating img 
 				var newProperty = $("<img>");
@@ -66,8 +69,6 @@ $(document).ready(function() {
 		});
 
 	});
-
-	
 
 	// weather widget for top of window
 			window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
