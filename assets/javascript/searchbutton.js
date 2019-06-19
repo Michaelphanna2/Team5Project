@@ -4,12 +4,12 @@ $(doucment).ready(function () {
         console.log(e);
     // $("#results-display").append();
     // search input handler
-    $('input').focus(function() {
+    $("#search-button-z").focus(function() {
         $(this).css("background", "yellow");
 
     });
 
-    $('input').blur(function() {
+    $("#search-button-z").blur(function() {
         $(this).css("background", "white");
 
     });
