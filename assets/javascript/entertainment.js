@@ -5,9 +5,7 @@ $(document).ready(function() {
 		// **go back to the api, try to limit search results ("articles" in results)
         key = "c095f624fd7ced1034d7f0e0c1e1e802"
         var url = "https://newsapi.org/v2/top-headlines?country=gb&category=entertainment&apiKey=0ec608c4c88f4339b03e2366f95f2d66"
-        
-
-		
+        		
 		$.ajax({
 			url: url,
 			method: "GET"
