@@ -1,29 +1,76 @@
-a {
+#map {
+  size: 20px;
+}
+
+#jTronSmaller {
+    color: #720e9e;
+    font-weight: bold;
+}
+
+#jtspan {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+@font-face {
+  font-family: 'yahoo';
+  src: url(../css/Yahoo.ttf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+.display-4 {
+  font-family: yahoo;
+  font-weight: 100;
+  color: #720e9e;
+  font-size: 25px;
+  text-align: left;
+}
+
+#search-button-one {
+  color: #720e9e;
+}
+
+#news {
+  color: #720e9e;
+}
+
+#convert {
+  color: #720e9e;
+}
+
+#sports {
+  color: #720e9e;
+}
+
+#search {
+  color: #720e9e;
+}
+
+#entertainment {
+  color: #720e9e;
+}
+
+#weather {
+  color: #720e9e;
+}
+
+#contactInfo {
+  color: #720e9e;
+}
+
+  a {
     font-size: 20px;
   }
   
-  /* Hover Pseudo Class:
-      Changes the style only when mouse hovers
-      over the preceding element.
-  */
   a:hover {
     background-color: red;
   }
   
-  /* Focus Pseudo Class
-      Changes the style only when browser
-      gives the element focus
-      (in this case, after the link is clicked).
-  */
   a:focus {
     background-color: orange;
   }
   
-  /* Active Pseudo Class
-      Changes the style only while the user
-      clicks down on an element. This style ceases
-      when the user releases their click.
-  */
   a:active {
     background-color: black;
   }
