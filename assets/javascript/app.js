@@ -7,24 +7,6 @@ $(document).ready(function() {
 // 	console.log(value);
 
 // 	});
-});
-
-window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  
-        window.myWidgetParam.push({
-          id: 19,
-          cityid: '4560349',
-          appid: 'b62ffdf3492cad757a89ae568fdac822',
-          units: 'imperial',
-          containerid: 'openweathermap-widget-19',
-        });
-           (function() {
-            var script = document.createElement('script');
-            script.async = true;
-            script.charset = "utf-8";
-            script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(script, s);
-          })();
 
   // var proLinks = function() {
   //   var queryURL = "restcountries-v1.p.rapidapi.com" + "e9f82e2598mshe0f794eb8b3c800p108814jsn600d5649c922";
@@ -96,3 +78,5 @@ window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
 // .end(function (result) {
 //   console.log(result.status, result.headers, result.body);
 // });
+
+});

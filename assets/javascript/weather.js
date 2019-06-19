@@ -1,10 +1,13 @@
 $(document).ready(function() {
 	// **need to add "clear children feature still"
-	$("#news").on("click", function() {
-		$("#results-display").append();
+	$("#weather").on("click", function() {
+		
 		// **go back to the api, try to limit search results ("articles" in results)
-		var url = "https://newsapi.org/v2/top-headlines?sources=google-news-uk&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-		// "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
+        key = "c095f624fd7ced1034d7f0e0c1e1e802"
+        var url = "https://community-open-weather-map.p.rapidapi.com/weather&" + key
+        
+
+		
 		$.ajax({
 			url: url,
 			method: "GET"
