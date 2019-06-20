@@ -13,7 +13,6 @@ $(document).ready(function() {
 		$("#results-display").append();
 		var clearClick = $(this).html();
 		// **go back to the api, try to limit search results ("articles" in results)
-<<<<<<< HEAD
 		var url = "https://newsapi.org/v2/top-headlines?sources=google-news-uk&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
 		// "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
 		$.ajax({
@@ -21,14 +20,6 @@ $(document).ready(function() {
 			method: "GET",
 			clearClick: true
 		}).then(function(response){
-=======
-		var url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-			// "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-		$.ajax({
-			url: url,
-			method: "GET",
-		}).then(function(response) {
->>>>>>> master
 			console.log(response);
 			var articles = response.articles;
 			for (var i = 0; i < articles.length; i++) {
@@ -37,13 +28,8 @@ $(document).ready(function() {
 				// create container div
 				var newDiv = $("<div>");
 				newDiv.html(article.title);
-<<<<<<< HEAD
 				
 				// creating img 
-=======
-
-				// creating img
->>>>>>> master
 				var newProperty = $("<img>");
 				newProperty.attr("src", article.urlToImage);
 
@@ -52,7 +38,6 @@ $(document).ready(function() {
 
 				// add container div to results display
 				$("#results-display").append(newDiv);
-<<<<<<< HEAD
 
 				var newButton = article.url
 				newButton = $("<div>");
@@ -61,12 +46,8 @@ $(document).ready(function() {
 
 				
 			};
-=======
-			}
->>>>>>> master
 		});
 	});
-<<<<<<< HEAD
 	// sports click function
 	$("#sports").on("click", function() {
 		console.log("click");
@@ -88,79 +69,6 @@ $(document).ready(function() {
 				// create container div
 				var newDiv = $("<div>");
 				newDiv.html(article.title);
-=======
-
-
-// **Needs to clear click children from previous clicks still**
-	$("#sports").on("click", function() {
-		var url =
-			"https://newsapi.org/v2/top-headlines?sources=bbc-sport&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-		$.ajax({
-			url: url,
-			method: "GET",
-		}).then(function(response) {
-			console.log(response);
-
-			var article = response.articles;
-			// looping through array
-			var articles = response.articles;
-			for (var i = 0; i < articles.length; i++){
-				var article = articles[i];
-				// creates container div
-				var newDiv = $("<div>");
-				
-				// prints to html
-				newDiv.html(article.title);
-
-				// adds img from article
-				var newProperty = $("<img>");
-				newProperty.attr("src", article.urlToImage);
-
-				// adds img to div
-				newDiv.append(newProperty);
-
-				// add container
-				$("#results-display").append(newDiv);
-			}
-		});
-	});
-	// searching news articles that mention a specific topic or keyword
-	// var urlEverything =
-	// 	"https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-	
-	//var topHeadlinesTypes= ['sports','news']
-	// var urlTopHeadlines =
-	// 	"https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-	// // searching news articles that mention a specific topic or keyword
-	// var urlEverything = "https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66"
-	
-	// //var topHeadlinesTypes= ['sports','news']
-	// 	var urlTopHeadlines = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=0ec608c4c88f4339b03e2366f95f2d66";
-	
-	window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-	
-	window.myWidgetParam.push({
-			id: 19,
-			cityid: '4560349',
-			appid: 'b62ffdf3492cad757a89ae568fdac822',
-			units: 'imperial',
-			containerid: 'openweathermap-widget-19',
-		});
-		
-		(function() {
-			var script = document.createElement('script');
-			script.async = true;
-			script.charset = "utf-8";
-			script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(script, s);
-			})();
-			
-});
-// 	$.getJSON("https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66");
-
-// 	$.getJSON("https://newsapi.org/v2/everything?q=Apple&from=2019-06-16&sortBy=popularity&apiKey=0ec608c4c88f4339b03e2366f95f2d66");
->>>>>>> master
 
 				var newP = $("<p>");
 				newP.html(article.url);
